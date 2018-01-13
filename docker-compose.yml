@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  app:
+    image: 'jerev/docker-php-apache-v8js'
+    volumes:
+      - './:/app'
+    ports:
+      - '80:80'
+    environment:
+      WEB_DOCUMENT_ROOT: '/app/web'
+      WEB_DOCUMENT_INDEX: 'index.php'
