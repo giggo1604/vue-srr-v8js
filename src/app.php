@@ -7,12 +7,24 @@
 
             $app_src = file_get_contents('../web/server.js');
 
+            $props = [
+                'navigation' => [
+                    ['name' => 'Test1'],
+                    ['name' => 'Test2']
+                ]
+            ];
+
             try {
-                echo $renderer->addSources([$app_src])->render();
+                $renderer->addSources([$app_src])
+                    ->setProps($props)
+                    ->echo();
             } catch(V8JsException $e) {
                 var_dump($e);
             }
         ?>
+        <script>
+            var PHP = { props: <?php echo json_encode($props); ?> }
+        </script>
         <script src=client.js></script>
     </body>
 </html>

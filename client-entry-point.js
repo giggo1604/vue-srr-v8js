@@ -1,3 +1,3 @@
-import { app } from './app'
-console.log(app)
+import { app } from './src/Templates/app'
+
 app.$mount('#app')

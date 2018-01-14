@@ -11,4 +11,9 @@ class VueRenderer extends JavascriptRenderer {
             file_get_contents('./../node_modules/vue-server-renderer/basic.js')
         ]);
     }
+
+    public function setProps($props) {
+        $this->v8->props = $props;
+        return $this;
+    }
 }
